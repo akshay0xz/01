@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login First</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body { flex-direction: column; }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      input, button {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🔐 Please Login First</h2>
+    <form onsubmit="return validateLogin()">
+      <label>Email:</label>
+      <input type="text" id="username" placeholder="Enter your email" required />
+      <label>Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <script>
+      function validateLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "1234") {
+          window.location.href = "index.html";
+        } else {
+          alert("Invalid login. Try admin / 1234");
+        }
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
